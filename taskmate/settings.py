@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     
     'users.apps.UsersConfig',
+    'workspace.apps.WorkspaceConfig',
 ]
 
 MIDDLEWARE = [
