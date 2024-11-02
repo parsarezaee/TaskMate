@@ -23,7 +23,7 @@ class Workspace(models.Model):
 
 class Membership(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    Workspace = models.ForeignKey(Workspace, on_delete=models.CASCADE)
+    workspace = models.ForeignKey(Workspace, on_delete=models.CASCADE)
     role = models.CharField(max_length=20, choices=[("admin", "Admin"), ("member", "Member")])
 
     def __str__(self):
