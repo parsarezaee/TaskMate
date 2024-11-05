@@ -4,5 +4,11 @@
 		"name": "TaskMate",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
-	"item": []
+	"item": [
+		{
+			"name": "users",
+			"item": [],
+			"id": "e02323de-9968-4795-b8c1-72268bf0ce03"
+		}
+	]
 }
