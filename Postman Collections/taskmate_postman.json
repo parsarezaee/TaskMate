@@ -15,8 +15,40 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first_name\": \"reza\",\n  \"last_name\": \"rezae\",\n  \"email\": \"reza@example.com\",\n  \"password\": 1234,\n  \"password2\": 1234\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base url}}/users/signup/"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"id": "04f87885-5da8-4380-9d1c-ec8b5f6c497e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"reza@example.com\",\n    \"password\": 1234\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base url}}users/login/"
 					},
 					"response": []
 				}
