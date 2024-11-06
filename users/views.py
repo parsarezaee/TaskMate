@@ -15,6 +15,7 @@ from rest_framework.permissions import AllowAny
 class SignUpView(CreateAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserSignupSerializers
+    permission_classes = [AllowAny]
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
