@@ -7,7 +7,20 @@
 	"item": [
 		{
 			"name": "users",
-			"item": [],
+			"item": [
+				{
+					"name": "signup",
+					"id": "23f91b5c-9053-4e4d-9922-dadf7bdb9973",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "e02323de-9968-4795-b8c1-72268bf0ce03"
 		}
 	]
