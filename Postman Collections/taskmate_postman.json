@@ -209,6 +209,18 @@
 						"url": "{{base url}}/workspace/workspace/{{int:pk}}/"
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "f904297e-8f94-43c8-ba8e-89ff3ea35ea6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "13462503-9ff8-4a4c-bd06-ea469a75eb6f"
