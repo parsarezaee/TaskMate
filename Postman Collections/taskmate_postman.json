@@ -84,8 +84,24 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"django\",\n    \"description\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base url}}/workspace/create/"
 					},
 					"response": [
 						{
@@ -155,6 +171,25 @@
 							"body": "{\n    \"id\": 1,\n    \"name\": \"django\",\n    \"description\": \"\",\n    \"unique_code\": \"R55UYM\",\n    \"admin\": 4,\n    \"role\": \"admin\"\n}"
 						}
 					]
+				},
+				{
+					"name": "list of workspaces",
+					"id": "2f651e8a-bc8a-42ba-b2d3-cf119f90cdf4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base url}}/workspace/create/"
+					},
+					"response": []
 				}
 			],
 			"id": "13462503-9ff8-4a4c-bd06-ea469a75eb6f"
