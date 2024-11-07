@@ -198,8 +198,15 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "{{base url}}/workspace/workspace/{{<int:pk>}}/"
 					},
 					"response": []
 				}
