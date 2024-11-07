@@ -190,6 +190,18 @@
 						"url": "{{base url}}/workspace/create/"
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "234d53f6-64f7-405c-b353-723e816a66b2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "13462503-9ff8-4a4c-bd06-ea469a75eb6f"
