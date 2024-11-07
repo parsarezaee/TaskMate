@@ -192,7 +192,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "retrieve workspace",
 					"id": "234d53f6-64f7-405c-b353-723e816a66b2",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
