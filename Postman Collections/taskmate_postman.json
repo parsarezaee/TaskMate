@@ -206,7 +206,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{base url}}/workspace/workspace/{{<int:pk>}}/"
+						"url": "{{base url}}/workspace/workspace/{{int:pk}}/"
 					},
 					"response": []
 				}
