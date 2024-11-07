@@ -21,4 +21,4 @@ class WorkspaceRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        return Workspace.objects.filter(memberships__user=self.request.user)
+        return Workspace.objects.filter(membership__user=self.request.user)
