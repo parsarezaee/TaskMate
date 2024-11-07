@@ -51,6 +51,18 @@
 						"url": "{{base url}}users/login/"
 					},
 					"response": []
+				},
+				{
+					"name": "logout",
+					"id": "5b1aaf71-6cb9-4bf1-846d-1cb7047b7127",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "e02323de-9968-4795-b8c1-72268bf0ce03"
