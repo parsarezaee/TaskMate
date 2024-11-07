@@ -73,6 +73,24 @@
 				}
 			],
 			"id": "e02323de-9968-4795-b8c1-72268bf0ce03"
+		},
+		{
+			"name": "workspace",
+			"item": [
+				{
+					"name": "create workspace",
+					"id": "be2ffd6a-cac8-4e0c-b004-5c3af47da88d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "13462503-9ff8-4a4c-bd06-ea469a75eb6f"
 		}
 	]
 }
