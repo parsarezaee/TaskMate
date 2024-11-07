@@ -220,7 +220,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxMDExMjM3LCJpYXQiOjE3MzEwMTA5MzcsImp0aSI6IjM2NGVmZjlmY2U2ZjQwYWZhNTdiNjliZGFhOWJkNDZiIiwidXNlcl9pZCI6NH0.EhjfW2mZ11_0AsQfJrQX1XSWa-jK-ZZwIjJvmOpQmEY"
+								"token": ""
 							}
 						},
 						"method": "PATCH",
@@ -304,6 +304,18 @@
 							"body": "{\n    \"id\": 1,\n    \"name\": \"django\",\n    \"description\": \"i don't know:)\",\n    \"unique_code\": \"R55UYM\",\n    \"admin\": 4,\n    \"role\": \"admin\"\n}"
 						}
 					]
+				},
+				{
+					"name": "delete workspace",
+					"id": "09100c49-b46f-4610-9f35-1becd869a1d6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "13462503-9ff8-4a4c-bd06-ea469a75eb6f"
