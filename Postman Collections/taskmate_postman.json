@@ -211,16 +211,99 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "update workspace",
 					"id": "f904297e-8f94-43c8-ba8e-89ff3ea35ea6",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxMDExMjM3LCJpYXQiOjE3MzEwMTA5MzcsImp0aSI6IjM2NGVmZjlmY2U2ZjQwYWZhNTdiNjliZGFhOWJkNDZiIiwidXNlcl9pZCI6NH0.EhjfW2mZ11_0AsQfJrQX1XSWa-jK-ZZwIjJvmOpQmEY"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"i don't know:)\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base url}}/workspace/workspace/{{int:pk}}/"
 					},
-					"response": []
+					"response": [
+						{
+							"id": "e7bb93ee-9779-41de-99bc-5e9a923b7668",
+							"name": "update example",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"i don't know:)\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "127.0.0.1:8000/workspace/workspace/1/"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 07 Nov 2024 20:23:28 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.15"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "103"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"id\": 1,\n    \"name\": \"django\",\n    \"description\": \"i don't know:)\",\n    \"unique_code\": \"R55UYM\",\n    \"admin\": 4,\n    \"role\": \"admin\"\n}"
+						}
+					]
 				}
 			],
 			"id": "13462503-9ff8-4a4c-bd06-ea469a75eb6f"
