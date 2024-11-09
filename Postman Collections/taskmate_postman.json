@@ -94,7 +94,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"django\",\n    \"description\": \"\"\n}",
+							"raw": "{\n    \"name\": \"django\",\n    \"description\": \"\",\n    \"visibility\": \"private\" //\"public\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -169,6 +169,72 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"id\": 8,\n    \"name\": \"django\",\n    \"description\": \"\",\n    \"unique_code\": null,\n    \"admin\": 4,\n    \"role\": \"admin\",\n    \"visibility\": \"private\"\n}"
+						},
+						{
+							"id": "9c4f052a-62be-49a7-900a-b32833f9343c",
+							"name": "workspace public response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"django\",\n    \"description\": \"\"\n    // \"visibility\": \"private\" //\"public\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "127.0.0.1:8000/workspace/create/"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Nov 2024 19:47:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.15"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "112"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"id\": 10,\n    \"name\": \"django\",\n    \"description\": \"\",\n    \"unique_code\": \"SIOE63\",\n    \"admin\": 4,\n    \"role\": \"admin\",\n    \"visibility\": \"public\"\n}"
 						}
 					]
 				},
