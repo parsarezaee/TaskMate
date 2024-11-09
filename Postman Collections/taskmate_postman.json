@@ -105,14 +105,14 @@
 					},
 					"response": [
 						{
-							"id": "78646aa6-83bc-4380-b5f1-15e233230609",
-							"name": "create response",
+							"id": "16b298c6-c6b4-40c7-ab49-c73e66f5e96b",
+							"name": "workspace private response",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"django\",\n    \"description\": \"\"\n}",
+									"raw": "{\n    \"name\": \"django\",\n    \"description\": \"\",\n    \"visibility\": \"private\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -127,7 +127,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Thu, 07 Nov 2024 15:29:11 GMT"
+									"value": "Sat, 09 Nov 2024 19:44:17 GMT"
 								},
 								{
 									"key": "Server",
@@ -151,7 +151,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "89"
+									"value": "108"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -168,7 +168,7 @@
 							],
 							"cookie": [],
 							"responseTime": null,
-							"body": "{\n    \"id\": 1,\n    \"name\": \"django\",\n    \"description\": \"\",\n    \"unique_code\": \"R55UYM\",\n    \"admin\": 4,\n    \"role\": \"admin\"\n}"
+							"body": "{\n    \"id\": 8,\n    \"name\": \"django\",\n    \"description\": \"\",\n    \"unique_code\": null,\n    \"admin\": 4,\n    \"role\": \"admin\",\n    \"visibility\": \"private\"\n}"
 						}
 					]
 				},
