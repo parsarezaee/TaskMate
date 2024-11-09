@@ -5,7 +5,7 @@ from .models import Workspace, Membership
 
 @admin.register(Workspace)
 class WorkspaceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'admin', 'unique_code', 'description')
+    list_display = ('name', 'admin', 'unique_code', 'description', 'visibility')
     list_filter = ('admin',)
     search_fields = ('name', 'unique_code', 'admin__email')
     readonly_fields = ('unique_code',)

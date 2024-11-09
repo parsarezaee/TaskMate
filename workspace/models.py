@@ -12,10 +12,22 @@ def generate_unique_code():
 
 
 class Workspace(models.Model):
+    VISIBILITY_CHOICES = [
+        ('public', 'Public'),
+        ('private', 'Private'),
+    ]
     name = models.CharField(max_length=60)
     description = models.TextField(blank=True, null=True)
     admin = models.ForeignKey(User, on_delete=models.CASCADE, related_name="owned_workspaces")
-    unique_code = models.CharField(max_length=6, unique=True, default=generate_unique_code)
+    unique_code = models.CharField(max_length=6, unique=True, blank=True, null=True)
+    visibility = models.CharField(max_length=7, choices=VISIBILITY_CHOICES, default='public')
+
+    def save(self, *args, **kwargs):
+        if self.visibility == 'public' and not self.unique_code:
+            self.unique_code = generate_unique_code()
+        elif self.visibility == 'private':
+            self.unique_code = None
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
