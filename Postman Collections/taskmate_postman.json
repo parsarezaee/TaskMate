@@ -392,6 +392,24 @@
 				}
 			],
 			"id": "13462503-9ff8-4a4c-bd06-ea469a75eb6f"
+		},
+		{
+			"name": "memberships",
+			"item": [
+				{
+					"name": "list of memberships",
+					"id": "48ebad65-f5cb-4955-bf13-90a70c71bb03",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "ab22c70f-48c0-4e68-8802-a90158159f5e"
 		}
 	]
 }
