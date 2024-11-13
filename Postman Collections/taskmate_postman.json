@@ -407,9 +407,26 @@
 						"header": []
 					},
 					"response": []
+				},
+				{
+					"name": "add member",
+					"id": "94a7e7c7-6467-4bd9-a1e8-0e971579bb86",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "ab22c70f-48c0-4e68-8802-a90158159f5e"
+		},
+		{
+			"name": "New Folder",
+			"item": [],
+			"id": "e66e0346-3b4a-4ce5-8b34-b8f742a596fc"
 		}
 	]
 }
