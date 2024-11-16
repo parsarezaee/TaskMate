@@ -21,9 +21,9 @@ jobs:
 
       - name: Wait for services to be ready
         run: sleep 10 
-        
+
       - name: Check logs for taskmate_web
-        run: docker compose up logs taskmate_web
+        run: docker compose logs taskmate_web
 
       - name: Run tests
         run: docker compose exec taskmate_web python manage.py test  
