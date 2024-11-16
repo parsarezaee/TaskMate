@@ -14,8 +14,10 @@ services:
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_HOST=${DB_HOST}
       - DB_PORT=${DB_PORT}
-    env_file:
-      - ./.env
+      - DEBUG=${DEBUG}
+      - SECRET_KEY=${SECRET_KEY}
+    # env_file:
+    #   - ./.env
     depends_on:
       postgres_db:
         condition: service_started
