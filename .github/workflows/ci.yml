@@ -26,7 +26,7 @@ jobs:
         run: docker compose logs taskmate_web
 
       - name: Run tests
-        run: docker compose exec taskmate_web python manage.py test  
+        run: docker compose exec taskmate python manage.py test  
         env:
           DJANGO_SETTINGS_MODULE: taskmate.settings  
 
