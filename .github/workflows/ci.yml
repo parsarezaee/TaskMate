@@ -19,6 +19,16 @@ jobs:
       - name: Set up Docker Compose
         run: docker compose up -d --build  
 
+      - name: Create .env file
+        run: |
+          echo "DEBUG=True" >> .env
+          echo "DB_NAME=TaskMate" >> .env
+          echo "DB_USER=PARSA" >> .env
+          echo "DB_PASSWORD=PARSA1234" >> .env
+          echo "DB_HOST=postgres_db" >> .env
+          echo "DB_PORT=5432" >> .env
+          echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> .env
+
       - name: Run tests
         run: docker compose exec taskmate_web python manage.py test  
         env:
