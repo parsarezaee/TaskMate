@@ -1,0 +1,29 @@
+name: CI/CD Pipeline with Docker
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Compose
+        run: docker-compose up -d --build  
+
+      - name: Run tests
+        run: docker-compose exec taskmate_web python manage.py test  
+        env:
+          DJANGO_SETTINGS_MODULE: taskmate.settings  
+
+      - name: Tear down Docker Compose
+        if: always()
+        run: docker-compose down  
