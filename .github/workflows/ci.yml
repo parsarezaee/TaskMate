@@ -23,7 +23,7 @@ jobs:
         run: sleep 10 
 
       - name: Check logs for taskmate_web
-        run: docker compose logs taskmate_web
+        run: docker compose logs taskmate
 
       - name: Run tests
         run: docker compose exec taskmate python manage.py test  
