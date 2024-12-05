@@ -11,8 +11,8 @@ class WorkspaceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Workspace
-        fields = ['id', 'name', 'description', 'unique_code', 'admin', 'role', 'visibility']
-        read_only_fields = ['id', 'unique_code', 'admin', 'role']
+        fields = ['id', 'name', 'description', 'unique_code', 'owner', 'role', 'visibility']
+        read_only_fields = ['id', 'unique_code', 'owner', 'role']
 
     def get_role(self, obj):
         user = self.context['request'].user

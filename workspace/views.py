@@ -13,8 +13,8 @@ class WorkspaceListCreateView(generics.ListCreateAPIView):
     permission_classes = [IsAuthenticated]
 
     def perform_create(self, serializer):
-        workspace = serializer.save(admin=self.request.user)
-        Membership.objects.create(user=self.request.user, workspace=workspace, role="admin")
+        workspace = serializer.save(owner=self.request.user)
+        Membership.objects.create(user=self.request.user, workspace=workspace, role="owner")
 
 
 class WorkspaceRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
