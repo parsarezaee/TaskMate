@@ -235,6 +235,72 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"id\": 10,\n    \"name\": \"django\",\n    \"description\": \"\",\n    \"unique_code\": \"SIOE63\",\n    \"admin\": 4,\n    \"role\": \"admin\",\n    \"visibility\": \"public\"\n}"
+						},
+						{
+							"id": "182fab60-f8c7-4c44-989d-5b7870257518",
+							"name": "create workspace",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"django\",\n    \"description\": \"\",\n    \"visibility\": \"private\" //\"public\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "127.0.0.1:8000/workspace/create/"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Dec 2024 19:36:36 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.15"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "109"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"id\": 11,\n    \"name\": \"django\",\n    \"description\": \"\",\n    \"unique_code\": null,\n    \"owner\": 1,\n    \"role\": \"owner\",\n    \"visibility\": \"private\"\n}"
 						}
 					]
 				},
