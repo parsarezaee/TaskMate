@@ -6,6 +6,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.contrib.auth import get_user_model
+from django.shortcuts import get_object_or_404
 
 User = get_user_model()
 
@@ -68,4 +69,62 @@ class AddMemberToWorkspaceView(APIView):
         Membership.objects.create(workspace=workspace, user=user_to_add, role=role)
         return Response({"message": f"User {email} added to the workspace successfully"}, status=status.HTTP_201_CREATED)
         
+
+class LeaveWorkspaceView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, workspace_id):
+        workspace = get_object_or_404( Workspace, id=workspace_id)
+
+        try:
+            membership = Membership.objects.get(workspace=workspace, user=request.user)
+        except Membership.DoesNotExist:
+            return Response({"error": "You are not a member of this workspace"}, status=status.HTTP_403_FORBIDDEN)
+        
+        if membership.role == "owner":
+            return Response({"error": "Owner cannot leave the workspace directly"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        membership.delete()
+        return Response({"message": "You have left the workspace successfuly,"}, status=status.HTTP_200_OK)
+    
+
+class RemoveMemberView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, workspace_id):
+        email = request.data.get('email')
+        if not email:
+            return Response({"error": "Email is required"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        workspace = get_object_or_404(Workspace, id=workspace_id)
+        
+        try:
+            request_membership = Membership.objects.get(workspace=workspace, user=request.user)
+        except Membership.DoesNotExist:
+            return Response({"error": "You are not a member of this workspace"}, status=status.HTTP_403_FORBIDDEN)
+        
+        if request_membership.role == "member":
+            return Response({"error": "Members cannot remove other users"}, status=status.HTTP_403_FORBIDDEN)
+        
+        try:
+            user_to_remove = User.objects.get(email=email)
+        except User.DoesNotExist:
+            return Response({"error": "User with this email does not exist"}, status=status.HTTP_404_NOT_FOUND)
+
+        try:
+            target_membership = Membership.objects.get(workspace=workspace, user=user_to_remove)
+        except Membership.DoesNotExist:
+            return Response({"error": "User is not a member of this workspace"}, status=status.HTTP_400_BAD_REQUEST)
+
+        if target_membership.role == 'owner': 
+            return Response({"error": "You cannot remove the owner"}, status=status.HTTP_403_FORBIDDEN)
+        
+        if request_membership.role == 'admin':
+            if not request_membership.can_remove_users:
+                return Response({"error": "You do not have permission to remove users"}, status=status.HTTP_403_FORBIDDEN)
+
+        target_membership.delete()
+        return Response({"message": f"User {email} removed successfully"}, status=status.HTTP_200_OK)
+
+
         

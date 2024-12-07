@@ -42,6 +42,7 @@ class Membership(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     workspace = models.ForeignKey(Workspace, on_delete=models.CASCADE)
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default="member")
-
+    can_remove_users = models.BooleanField(default=False) 
+    
     def __str__(self):
         return f"{self.user.username} - {self.role} in {self.workspace.name}"
