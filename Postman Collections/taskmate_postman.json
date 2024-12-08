@@ -41,14 +41,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"reza@example.com\",\n    \"password\": 1234\n}",
+							"raw": "{\n    \"email\": \"parsa@yahoo.com\",\n    \"password\": 1234\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{base url}}users/login/"
+						"url": "{{base url}}/users/login/"
 					},
 					"response": []
 				},
