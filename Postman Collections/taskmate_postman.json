@@ -692,6 +692,18 @@
 							"body": "{\n    \"message\": \"You have left the workspace successfuly,\"\n}"
 						}
 					]
+				},
+				{
+					"name": "New Request",
+					"id": "04bed589-fd27-49d7-be2a-725dc6cc106a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "ab22c70f-48c0-4e68-8802-a90158159f5e"
