@@ -70,6 +70,44 @@ class AddMemberToWorkspaceView(APIView):
         return Response({"message": f"User {email} added to the workspace successfully"}, status=status.HTTP_201_CREATED)
         
 
+class TransferOwnershipView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, workspace_id):
+        new_owner_email = request.data.get('email')
+
+        if not new_owner_email:
+            return Response({"error": "Email is required"}, status==status.HTTP_400_BAD_REQUEST)
+        
+        workspace = get_object_or_404(Workspace, id=workspace_id)
+
+        try:
+            current_owner_membership = Membership.objects.get(workspace=workspace, user=request.user, role="owner")
+        except Membership.DoesNotExist:
+            return Response({"error": "You are not the owner of this workspace"}, status=status.HTTP_403_FORBIDDEN)
+        
+        try:
+            new_owner_user = User.objects.get(email=new_owner_email)
+        except User.DoesNotExist:
+            return Response({"error": "User with this email does not exist"}, status=status.HTTP_404_NOT_FOUND)
+        
+        try:
+            new_owner_membership = Membership.objects.get(workspace=workspace, user=new_owner_user)
+        except Membership.DoesNotExist:
+            return Response({"error": "User is not a member of this workspace"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        new_owner_membership.role = "owner"
+        new_owner_membership.save()
+
+        current_owner_membership.role = "admin"
+        current_owner_membership.save()
+
+        return Response(
+            {"message": f"Ownership successfully transferred to {new_owner_email}"},
+            status=status.HTTP_200_OK
+            )
+    
+
 class LeaveWorkspaceView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -82,7 +120,7 @@ class LeaveWorkspaceView(APIView):
             return Response({"error": "You are not a member of this workspace"}, status=status.HTTP_403_FORBIDDEN)
         
         if membership.role == "owner":
-            return Response({"error": "Owner cannot leave the workspace directly"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "Owner must transfer ownership before leaving"}, status=status.HTTP_400_BAD_REQUEST)
         
         membership.delete()
         return Response({"message": "You have left the workspace successfuly,"}, status=status.HTTP_200_OK)
@@ -125,6 +163,3 @@ class RemoveMemberView(APIView):
 
         target_membership.delete()
         return Response({"message": f"User {email} removed successfully"}, status=status.HTTP_200_OK)
-
-
-        
