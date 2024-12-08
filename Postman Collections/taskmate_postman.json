@@ -694,7 +694,7 @@
 					]
 				},
 				{
-					"name": "New Request",
+					"name": "transfer ownership",
 					"id": "04bed589-fd27-49d7-be2a-725dc6cc106a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
