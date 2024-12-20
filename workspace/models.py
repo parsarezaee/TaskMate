@@ -28,6 +28,9 @@ class Workspace(models.Model):
         elif self.visibility == 'private':
             self.unique_code = None
         super().save(*args, **kwargs)
+    
+    def member_count(self):
+        return self.memeberships.count()
 
     def __str__(self):
         return self.name
@@ -40,7 +43,7 @@ class Membership(models.Model):
         ("member", "Member"),
     ]
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    workspace = models.ForeignKey(Workspace, on_delete=models.CASCADE)
+    workspace = models.ForeignKey(Workspace, on_delete=models.CASCADE, related_name="memberships")
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default="member")
     can_remove_users = models.BooleanField(default=False) 
     
